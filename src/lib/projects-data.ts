@@ -55,6 +55,146 @@ export interface ProjectDetail {
 }
 
 export const SHOWCASE_PROJECTS: ProjectDetail[] = [
+  // 0. /landing-checklist
+  {
+    slug: "landing-checklist",
+    command: "/landing-checklist",
+    title: "The Clarity-First Framework",
+    headline: "4 fundamental design principles & strict checkup framework for high-converting landing pages",
+    category: "agent-skill",
+    tag: "CRO & UX Framework",
+    accentColor: "#06b6d4",
+    accentGradient: "from-cyan-500/20 via-teal-600/10 to-transparent",
+    initiationDate: "2026-08-24",
+    dateDisplay: "Aug 2026",
+    timeAgo: "Today",
+    tldr: "Translates raw UX metrics into 4 strict product mandates: 5-Second Clarity, Mobile Performance Budget (LCP < 2.5s), Native UX Integrity (0 scrolljacking), and Outcome-Driven Hierarchy.",
+    demoUrl: "/wiki/landing-checklist",
+    demoType: "wiki",
+    demoLabel: "Read Landing Checklist Guide",
+    badges: ["5-Second Clarity", "Mobile Budget (LCP < 2.5s)", "Native UX (No Scrolljack)", "Outcome Hierarchy", "CRO Audit"],
+    overview: "Most landing pages suffer from cognitive confusion, heavy mobile assets, and decorative noise. The Clarity-First Framework enforces 4 non-negotiable design principles to maximize clarity, accessibility, and conversion.",
+    generativeTheme: "neon-cyan",
+    visualizer: {
+      heroTitle: "The Clarity-First Framework",
+      subNamespace: "skill/landing-checklist",
+      nodes: [
+        {
+          id: "01",
+          step: "01",
+          title: "5-Second Clarity",
+          accent: "#06b6d4",
+          description: [
+            "Answers 'What is this?' and 'What to do?' in 5 seconds",
+            "Direct value proposition without marketing fluff",
+            "Target usability pass rate > 90% on cold traffic"
+          ]
+        },
+        {
+          id: "02",
+          step: "02",
+          title: "Mobile Budget",
+          accent: "#38bdf8",
+          description: [
+            "Strict LCP < 2.5s and total load < 1.5s on 4G networks",
+            "Rigid caps on asset weights, scripts, and DOM tree size",
+            "Eliminates up to 78% conversion drop from mobile lag"
+          ]
+        },
+        {
+          id: "03",
+          step: "03",
+          title: "Native UX Integrity",
+          accent: "#34d399",
+          description: [
+            "Strict ban on scrolljacking and custom inertia physics",
+            "Predictable platform patterns and native form controls",
+            "Full keyboard navigation and WCAG accessibility compliance"
+          ]
+        },
+        {
+          id: "04",
+          step: "04",
+          title: "Outcome Hierarchy",
+          accent: "#fbbf24",
+          description: [
+            "100% of UI elements tied to a conversion path or trust",
+            "Zero decorative fluff or irrelevant visual artifacts",
+            "Direct translation of incoming visitors into business results"
+          ]
+        }
+      ]
+    },
+    specSDD: {
+      inputs: [
+        "Landing page URL, design mockups, wireframes, or React/HTML components",
+        "Value proposition statements and core user conversion goals",
+        "Mobile viewport constraints and network performance budgets"
+      ],
+      outputs: [
+        "Structured diagnostic checkup report with pass/fail grades",
+        "Actionable remediation plan for copy, asset size, and layout hierarchy",
+        "Optimized above-the-fold component structure with direct CTA path"
+      ],
+      invariants: [
+        "Zero abstract copy in the hero section: must state core value immediately",
+        "Strict mobile performance budget: LCP under 2.5 seconds on 4G",
+        "Never hijack browser scrolling or alter native input controls",
+        "Every single visual element must support commercial action or build trust"
+      ],
+      coreEngine: "Four-phase diagnostic audit engine evaluating semantic clarity, mobile asset budgets, native browser behaviors, and outcome-focused visual hierarchy.",
+      dataStructures: [
+        "ClarityAudit: clarityPassRate, mobileLcpSeconds, scrolljackDetected, outcomeAlignmentRatio",
+        "AuditVerdict: ruleId, principleName, status (PASS/FAIL), diagnosticMetric, actionPlan"
+      ],
+      stateMachine: [
+        "01 5-Second Clarity -> 02 Mobile Budget Audit -> 03 Native UX Validation -> 04 Outcome Hierarchy -> Final Diagnostic Score"
+      ]
+    },
+    buildChecklist: [
+      {
+        phase: "Phase 1: 5-Second Clarity & Value Proposition",
+        tasks: [
+          { label: "Audit hero section for direct value proposition clarity", done: false },
+          { label: "Eliminate abstract marketing jargon and replace with concrete outcomes", done: false },
+          { label: "Place single primary CTA prominently above the mobile fold", done: false }
+        ]
+      },
+      {
+        phase: "Phase 2: Mobile Performance Budget Enforcement",
+        tasks: [
+          { label: "Optimize hero images to modern WebP/AVIF with responsive srcsets", done: false },
+          { label: "Audit bundle size and defer non-critical JavaScript to achieve LCP < 2.5s", done: false },
+          { label: "Prune excessive DOM node depth and heavy CSS animations", done: false }
+        ]
+      },
+      {
+        phase: "Phase 3: Native UX & Outcome Hierarchy Alignment",
+        tasks: [
+          { label: "Remove any scrolljacking or custom inertia event listeners", done: false },
+          { label: "Verify keyboard tab focus states and WCAG color contrast ratios", done: false },
+          { label: "Audit all visual elements and remove non-converting decorative noise", done: false }
+        ]
+      }
+    ],
+    testChecklist: [
+      {
+        suite: "Clarity & Performance Gates",
+        tests: [
+          { label: "5-second usability test achieves > 90% comprehension pass rate", passed: false, assertion: "assert(usabilityPassRate >= 0.90)" },
+          { label: "Mobile LCP measured under 2.5 seconds on simulated 4G network", passed: false, assertion: "assert(mobileLcpMs < 2500)" }
+        ]
+      },
+      {
+        suite: "Interaction & Conversion Gates",
+        tests: [
+          { label: "Browser scroll behavior remains 100% native with zero hijack events", passed: false, assertion: "assert(scrolljackingEvents === 0)" },
+          { label: "All above-the-fold visual elements connect directly to CTA or social proof", passed: false, assertion: "assert(outcomeAlignedRatio === 1.0)" }
+        ]
+      }
+    ]
+  },
+
   // 1. /wiki
   {
     slug: "wiki",
