@@ -48,7 +48,14 @@ AI coding agents need unambiguous linear priorities, while product managers and 
 
 ## 🔍 The 6 Ideation Streams & Gap Exploration Engine
 
-When planning new sprints or exploring product holes, `/usm` runs an exhaustive **6-Vector Audit** with a strict **Anti-Symmetry Rule** (real products have asymmetrical bottlenecks; no forced quotas):
+When planning new sprints or exploring product holes, `/usm` runs an exhaustive **6-Vector Audit** governed by a **3D Product Maturity Lens** and a strict **Anti-Symmetry Rule** (real products have asymmetrical bottlenecks; no forced quotas):
+
+### 🎯 The 4-Stage Product Maturity Lens
+Before ideation, the engine calibrates against the product's current lifecycle stage to heavily weight relevant vectors and ignore bloated, out-of-phase features:
+1. **Stage 0–1 (Pre-PMF):** *Goal:* Prove Value Hypothesis. *Heavy Weight:* VOC Workarounds, Competitor Parity, Core Domain Model.
+2. **Stage 1–10 (Early Growth):** *Goal:* PMF Validation & Retention. *Heavy Weight:* Funnel Drop-offs, Power-User Behavioral Cloning.
+3. **Stage 10–100 (Scaling):** *Goal:* Viral Scaling & Lower CAC. *Heavy Weight:* PLG Loops, SEO/Demand, API Ecosystems.
+4. **Stage Maturity (Defense):** *Goal:* Net Revenue Retention. *Heavy Weight:* UX Refactoring, Tech-Push (AI Enablers), Cross-sell Modules.
 
 ```
  1. 🗺️ CJM Transition Scan (S_1 ➔ S_N)
