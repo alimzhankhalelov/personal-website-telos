@@ -55,7 +55,147 @@ export interface ProjectDetail {
 }
 
 export const SHOWCASE_PROJECTS: ProjectDetail[] = [
-  // 0. /landing-checklist
+  // 0. /usm
+  {
+    slug: "usm",
+    command: "/usm",
+    title: "User Story Mapping & Multi-Vector Sprint Orchestrator",
+    headline: "Bridges 2D USM Matrix with 1D Backlogs in GitHub Projects & Issues with 6-Vector Gap Ideation",
+    category: "agent-skill",
+    tag: "Agile & Product Matrix",
+    accentColor: "#f43f5e",
+    accentGradient: "from-rose-500/20 via-pink-600/10 to-transparent",
+    initiationDate: "2026-08-24",
+    dateDisplay: "Aug 2026",
+    timeAgo: "Today",
+    tldr: "Bridges human visual GitHub Projects (2D Matrix & Sprint Board) with AI-readable Issues (Context). Automatically unrolls 2D CJM x Priority cards into 1D linear backlogs and runs 6-Vector Gap Ideation.",
+    demoUrl: "/wiki/usm",
+    demoType: "wiki",
+    demoLabel: "Read USM Documentation",
+    badges: ["2D to 1D Unrolling", "GitHub Projects & Issues", "6-Vector Gap Engine", "Human-in-the-Loop", "Sprint Orchestration"],
+    overview: "AI coding assistants need unambiguous linear priorities, while product managers and founders need visual 2D context across Customer Journey Map (CJM) stages. /usm establishes a dual-representation architecture automating GitHub Projects and pinned master issues.",
+    generativeTheme: "prism-spectrum",
+    visualizer: {
+      heroTitle: "USM & Sprint Orchestration Engine",
+      subNamespace: "skill/usm",
+      nodes: [
+        {
+          id: "01",
+          step: "01",
+          title: "Dynamic CJM",
+          accent: "#f43f5e",
+          description: [
+            "Discovers N discrete customer journey stages",
+            "Maps chronological user flow from touchpoint to retention",
+            "Establishes stage columns across the 2D matrix"
+          ]
+        },
+        {
+          id: "02",
+          step: "02",
+          title: "Dual Mapping",
+          accent: "#fb7185",
+          description: [
+            "Provisions 2D Matrix board view in GitHub Projects",
+            "Creates pinned Master Context Issue for AI agents",
+            "Unrolls 2D cards strictly by Priority (🔴 ➔ 🟡 ➔ 🟢)"
+          ]
+        },
+        {
+          id: "03",
+          step: "03",
+          title: "6-Vector Gap Audit",
+          accent: "#38bdf8",
+          description: [
+            "Audits CJM, VOC, Competitor, PLG, SEO & DDD vectors",
+            "Applies anti-symmetry rule (no forced fake quotas)",
+            "Generates high-ROI features with English JTBD formulas"
+          ]
+        },
+        {
+          id: "04",
+          step: "04",
+          title: "HITL Agent Loop",
+          accent: "#34d399",
+          description: [
+            "Human toggles status or checks boxes in GitHub UI",
+            "AI picks highest priority uncompleted task automatically",
+            "Auto-updates status to Done upon code verification"
+          ]
+        }
+      ]
+    },
+    specSDD: {
+      inputs: [
+        "Repository architecture, codebase context, and user domain model",
+        "Target release priority slices (Critical MVP / Important / Additional)",
+        "GitHub repository credentials and project owner permissions"
+      ],
+      outputs: [
+        "Configured GitHub Projects V2 with 3 standardized views",
+        "Pinned Master Context Issue #1 with 2D table and 1D checklist",
+        "Multi-vector backlog with real repository issues and sprint assignments"
+      ],
+      invariants: [
+        "Dual-Representation Guarantee: GitHub Projects for humans, Pinned Issue for AI",
+        "Strict 1D unrolling order: Priority ascending (🔴 ➔ 🟡 ➔ 🟢) and CJM Stage ascending (1 ➔ N)",
+        "Every project item must be linked to a real repository issue",
+        "Anti-Symmetry invariant: Gap exploration reflects actual codebase bottlenecks"
+      ],
+      coreEngine: "Dual-representation project compiler integrating GitHub Projects GraphQL API, CLI issue automation, and multi-vector product ideation.",
+      dataStructures: [
+        "USMCard: title, jtbd, priority (Critical/Important/Additional), cjmStage, sprint, status (Todo/In Progress/Done)",
+        "USMMatrix: stages[], releaseSlices[], unrolledBacklog[]"
+      ],
+      stateMachine: [
+        "01 CJM Discovery -> 02 Feature Mapping & JTBD -> 03 Dual-Representation Provisioning -> 04 6-Vector Gap Audit -> 05 HITL Execution Loop"
+      ]
+    },
+    buildChecklist: [
+      {
+        phase: "Phase 1: Dynamic CJM & Dual Representation",
+        tasks: [
+          { label: "Build dynamic N-stage CJM discovery and classification parser", done: false },
+          { label: "Implement GraphQL project provisioning with 3 standardized views", done: false },
+          { label: "Create pinned Master Context Issue compiler with 2D matrix table", done: false }
+        ]
+      },
+      {
+        phase: "Phase 2: 6-Vector Gap Exploration Engine",
+        tasks: [
+          { label: "Build transition scan analyzer for all stage boundaries T(S_k -> S_k+1)", done: false },
+          { label: "Integrate VOC, Cross-Niche, PLG, SEO, and Event Storming DDD vectors", done: false },
+          { label: "Enforce anti-symmetry and bilingual Language Protocol rules", done: false }
+        ]
+      },
+      {
+        phase: "Phase 3: Human-in-the-Loop AI Automation",
+        tasks: [
+          { label: "Build agent backlog scanner querying top open tasks by priority", done: false },
+          { label: "Implement automated status transitions (Todo -> In Progress -> Done)", done: false },
+          { label: "Publish comprehensive documentation to public Wiki Hub", done: false }
+        ]
+      }
+    ],
+    testChecklist: [
+      {
+        suite: "Matrix & Backlog Invariants",
+        tests: [
+          { label: "1D backlog unrolls strictly by Priority ascending then CJM Stage ascending", passed: false, assertion: "assert(backlogOrderValid === true)" },
+          { label: "All items in GitHub Projects map to valid repository issue IDs", passed: false, assertion: "assert(unlinkedItems.length === 0)" }
+        ]
+      },
+      {
+        suite: "Ideation & Sync Engine",
+        tests: [
+          { label: "6-Vector engine produces grounded features without symmetrical quota bias", passed: false, assertion: "assert(isAsymmetrical === true)" },
+          { label: "GraphQL view updater successfully provisions all 5 custom fields", passed: false, assertion: "assert(customFields.length >= 5)" }
+        ]
+      }
+    ]
+  },
+
+  // 1. /landing-checklist
   {
     slug: "landing-checklist",
     command: "/landing-checklist",
