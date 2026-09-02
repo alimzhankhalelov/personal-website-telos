@@ -8,6 +8,7 @@ interface GenerativeThumbnailProps {
   command?: string;
   className?: string;
   interactive?: boolean;
+  thumbnailSrc?: string;
 }
 
 const THUMBNAIL_IMAGES: Record<GenerativeThumbnailProps["theme"], { src: string; alt: string }> = {
@@ -41,16 +42,20 @@ export function GenerativeThumbnail({
   theme,
   title,
   className = "w-full h-full",
+  thumbnailSrc,
 }: GenerativeThumbnailProps) {
-  const thumbnail = THUMBNAIL_IMAGES[theme] || THUMBNAIL_IMAGES["neon-cyan"];
+  const fallback = THUMBNAIL_IMAGES[theme] || THUMBNAIL_IMAGES["neon-cyan"];
+  const imageSrc = thumbnailSrc || fallback.src;
+  const isGif = imageSrc.endsWith(".gif");
 
   return (
     <div className={`relative w-full h-full overflow-hidden bg-[#0a0d12] select-none group ${className}`}>
       {/* 1. High-Impact YouTube Thumbnail Image with Smooth Cinematic Hover */}
       <Image
-        src={thumbnail.src}
-        alt={title || thumbnail.alt}
+        src={imageSrc}
+        alt={title || fallback.alt}
         fill
+        unoptimized={isGif}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
         priority

@@ -41,6 +41,7 @@ export function FeaturedProjectsStrip({ className = "" }: FeaturedProjectsStripP
                   theme={project.generativeTheme}
                   command={project.command}
                   title={project.title}
+                  thumbnailSrc={project.thumbnailSrc}
                 />
               </div>
 
@@ -80,6 +81,7 @@ export function FeaturedProjectsStrip({ className = "" }: FeaturedProjectsStripP
                   theme={project.generativeTheme}
                   command={project.command}
                   title={project.title}
+                  thumbnailSrc={project.thumbnailSrc}
                 />
               </div>
 

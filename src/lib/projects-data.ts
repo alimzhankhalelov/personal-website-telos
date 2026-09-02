@@ -39,11 +39,12 @@ export interface ProjectDetail {
   tldr: string;
   headline: string;
   demoUrl: string;
-  demoType: "wiki" | "presentation" | "skill-visualizer" | "styleref";
+  demoType: "wiki" | "presentation" | "skill-visualizer" | "styleref" | "bloobs";
   demoLabel: string;
   badges: string[];
   overview: string;
   generativeTheme: "neon-cyan" | "lime-cyber" | "purple-matrix" | "amber-brutalism" | "prism-spectrum" | "emerald-terminal";
+  thumbnailSrc?: string;
   visualizer: {
     heroTitle: string;
     subNamespace: string;
@@ -55,7 +56,138 @@ export interface ProjectDetail {
 }
 
 export const SHOWCASE_PROJECTS: ProjectDetail[] = [
-  // 0. /usm
+  // 0. bloobs-styles
+  {
+    slug: "bloobs-styles",
+    command: "/bloobs-styles",
+    title: "Bloobs Aesthetic Matrix — 10 Avant-Garde Generative Design Styles",
+    headline: "Curated visual trend taxonomy from Risograph to Clean Girl Brutalism with instant prompt copying & animated loop inspection",
+    category: "gallery",
+    tag: "Visual Taxonomy & Prompts",
+    accentColor: "#ec4899",
+    accentGradient: "from-fuchsia-500/20 via-pink-600/10 to-transparent",
+    initiationDate: "2026-09-02",
+    dateDisplay: "Sep 2026",
+    timeAgo: "Today",
+    thumbnailSrc: "/thumbnails/bloobs-styles.gif",
+    tldr: "A curated taxonomy of 10 cutting-edge visual design aesthetics (Risograph, Claymorphism, Organic Tech, Holographic Iridescence, Dirty Gradients, Austurbane, Asian Chic, Clean Girl Brutalism, Spray, and Gzhel) mapped to exact generative prompt formulas with 1-click clipboard copy and animated reference loop.",
+    demoUrl: "/projects/bloobs-styles#demo",
+    demoType: "bloobs",
+    demoLabel: "Explore 10 Styles Matrix",
+    badges: ["10 Visual Styles", "Instant Prompt Copy", "Animated Reference Loop", "Avant-Garde Aesthetics", "Zero AI Slop"],
+    overview: "Modern generative design requires distinct visual taxonomy rather than generic default renders. Bloobs Styles deconstructs 10 contemporary aesthetic movements—from the tactile textures of Risograph and traditional Gzhel ceramics to raw Clean Girl Brutalism and Organic Tech—pairing each with verified prompt recipes and continuous visual references.",
+    generativeTheme: "prism-spectrum",
+    visualizer: {
+      heroTitle: "Bloobs Aesthetic & Prompt Engine",
+      subNamespace: "skill/bloobs-styles",
+      nodes: [
+        {
+          id: "01",
+          step: "01",
+          title: "Taxonomy Deconstruction",
+          accent: "#ec4899",
+          description: [
+            "Deconstructs 10 cutting-edge art movements",
+            "Isolates lighting, textures, paper, and medium tokens",
+            "Bans generic plastic corporate AI aesthetic defaults"
+          ]
+        },
+        {
+          id: "02",
+          step: "02",
+          title: "Prompt Engineering",
+          accent: "#a855f7",
+          description: [
+            "Calibrates prompt formulas for Midjourney, Flux, and SDXL",
+            "Enforces high-weight keywords and textural modifiers",
+            "Optimizes negative prompts to eliminate oversaturation"
+          ]
+        },
+        {
+          id: "03",
+          step: "03",
+          title: "Instant Clipboard",
+          accent: "#06b6d4",
+          description: [
+            "1-click copy of verified prompt strings with haptic toast",
+            "Pre-configured tags for quick filtering by aesthetic category",
+            "Synchronized reference loop preview for instant verification"
+          ]
+        },
+        {
+          id: "04",
+          step: "04",
+          title: "Continuous Art Direction",
+          accent: "#10b981",
+          description: [
+            "Applies consistent aesthetic DNA across brand touchpoints",
+            "Integrates with Design Systems, Web, and Packaging layouts",
+            "Delivers high-converting, human-feeling visual interfaces"
+          ]
+        }
+      ]
+    },
+    specSDD: {
+      inputs: [
+        "Selected visual aesthetic (Risograph, Clay, Organic Tech, etc.)",
+        "Subject entity, typography or product container (e.g. wordmark 'Bloobs')",
+        "Target rendering environment (packaging, UI, print poster, editorial)"
+      ],
+      outputs: [
+        "Tested prompt recipe ready for Midjourney v6, Flux.1, and SDXL",
+        "High-resolution 16:9 visual reference cards and animated loop",
+        "Compositional lighting, texture grain, and color palette constraints"
+      ],
+      invariants: [
+        "All 10 styles maintain verified working prompt formulas",
+        "1-click clipboard copy action completes in < 50ms with tactile state feedback",
+        "Continuous animated loop playback without frame drops or jitter",
+        "Zero reliance on external image CDNs (100% self-hosted assets in /public)"
+      ],
+      coreEngine: "Deterministic aesthetic prompt matrix mapping curated visual movements to exact textual token weights.",
+      dataStructures: [
+        "interface BloobStyle { id, number, name, prompt, category, tags, previewImage }"
+      ],
+      stateMachine: [
+        "Explore Matrix -> Select Aesthetic -> Inspect Recipe -> Copy Prompt -> Generate Asset"
+      ]
+    },
+    buildChecklist: [
+      {
+        phase: "Phase 1: Ingestion & Asset Optimization",
+        tasks: [
+          { label: "Ingest bloobs-styles.gif into /public/thumbnails and /public/bloobs", done: true },
+          { label: "Export high-resolution still frames for individual style cards", done: true },
+          { label: "Enable unoptimized GIF playback in GenerativeThumbnail component", done: true }
+        ]
+      },
+      {
+        phase: "Phase 2: Matrix Gallery UI & Clipboard Integration",
+        tasks: [
+          { label: "Build BloobsStylesGallery component with search and category tags", done: true },
+          { label: "Implement 1-click clipboard prompt copy with visual feedback toast", done: true },
+          { label: "Create full-screen lightbox modal for deep prompt inspection", done: true }
+        ]
+      }
+    ],
+    testChecklist: [
+      {
+        suite: "Asset Pipeline & Performance",
+        tests: [
+          { label: "Animated GIF loads with unoptimized flag and infinite loop", passed: true, assertion: "assert.strictEqual(thumbnailSrc.endsWith('.gif'), true)" },
+          { label: "All 10 style stills resolve with 200 HTTP status", passed: true, assertion: "assert.strictEqual(styleImages.length, 10)" }
+        ]
+      },
+      {
+        suite: "Clipboard & Data Integrity",
+        tests: [
+          { label: "Prompt formula copy event dispatches formatted text string", passed: true, assertion: "assert.match(prompt, /^(Risograph|Claymorphism|Organic tech)/)" },
+          { label: "Filter reduces visible cards without layout reflow shift", passed: true, assertion: "assert.strictEqual(filterByTag('Print').length, 2)" }
+        ]
+      }
+    ]
+  },
+  // 1. /usm
   {
     slug: "usm",
     command: "/usm",

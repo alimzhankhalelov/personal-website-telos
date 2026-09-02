@@ -89,6 +89,7 @@ export default function ProjectsPage() {
                   theme={project.generativeTheme}
                   command={project.command}
                   title={project.title}
+                  thumbnailSrc={project.thumbnailSrc}
                 />
               </Link>
             </div>

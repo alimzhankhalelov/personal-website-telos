@@ -6,6 +6,7 @@ import { getProjectBySlug, getAllProjects } from "@/lib/projects-data";
 import { GenerativeThumbnail } from "@/components/projects/generative-thumbnail";
 import { ProjectGlobalSections } from "@/components/projects/project-global-sections";
 import { StyleRefGalleryView } from "@/app/projects/styleref/gallery-view";
+import { BloobsGallery } from "@/app/projects/bloobs-styles/bloobs-gallery";
 import { JsonLd, getProjectJsonLd, getBreadcrumbJsonLd } from "@/components/seo/json-ld";
 
 interface ProjectPageProps {
@@ -124,6 +125,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             theme={project.generativeTheme}
             command={project.command}
             title={project.title}
+            thumbnailSrc={project.thumbnailSrc}
           />
         </figure>
 
@@ -169,6 +171,21 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             </p>
           </div>
           <StyleRefGalleryView />
+        </section>
+      )}
+
+      {/* Optional Interactive Gallery Playground for Bloobs Styles */}
+      {project.slug === "bloobs-styles" && (
+        <section id="demo" className="flex flex-col gap-4 pt-6 border-t border-border">
+          <div className="flex flex-col gap-1">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground" style={{ fontFamily: "'Google Sans', sans-serif" }}>
+              10 Visual Styles &amp; Prompt Matrix
+            </h2>
+            <p className="text-base text-muted-foreground font-light">
+              Explore 10 curated design aesthetics with animated reference loop and 1-click prompt copying.
+            </p>
+          </div>
+          <BloobsGallery />
         </section>
       )}
 

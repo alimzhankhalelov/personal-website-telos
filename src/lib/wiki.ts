@@ -73,6 +73,19 @@ export const METHODOLOGY_ITEMS: WikiItem[] = [
 
 export const SYSTEM_ITEMS: WikiItem[] = [
   {
+    id: "bloobs-styles",
+    title: "/bloobs-styles — Bloobs Aesthetic Matrix (10 Styles)",
+    summary: "Curated taxonomy of 10 modern generative design styles (Risograph, Clay, Organic Tech, Holographic, Brutalism, Gzhel) with tested prompt recipes and animated reference loop.",
+    category: "systems",
+    categoryLabel: "Visual Matrix",
+    tags: ["Generative Art", "Design Systems", "Prompt Engineering", "Visual Matrix", "Avant-Garde"],
+    date: "2026-09-02",
+    href: "/projects/bloobs-styles",
+    featured: true,
+    readingTime: "10 Styles & Demo",
+    keyTakeaway: "Zero plastic AI stock look; 10 distinct aesthetic trend formulas with 1-click clipboard delivery.",
+  },
+  {
     id: "wiki-skill",
     title: "/wiki — AI-Wiki Knowledge Compiler",
     summary: "Adaptive 2-Tier knowledge architecture & zero-bloat documentation engine that discovers real files and renders icon-first solid pod interfaces.",
